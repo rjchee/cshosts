@@ -55,7 +55,7 @@ def findbesthost(bits):
 			bestload = load
 			besthost = item[0]
 
-	return besthost+".cs.utexas.edu"
+	return besthost
 
 if __name__ == "__main__":
 	assert len(sys.argv) == 2, error_message

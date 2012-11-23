@@ -7,4 +7,4 @@ username="clay"
 # 	$ csconnect.sh 64
 bits=64
 
-ssh -X $username@`cshosts.py $bits`
+ssh -X $username@`cshosts.py $bits`.cs.utexas.edu
