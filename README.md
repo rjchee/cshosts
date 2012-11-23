@@ -19,3 +19,4 @@ Connects via SSH to the UT CS host with the lowest load.
 2. After configuring:
 
 	$ csconnect.sh
+
