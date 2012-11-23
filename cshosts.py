@@ -3,7 +3,12 @@ import http.client, html.parser, sys
 website = "apps.cs.utexas.edu"
 filepath = "/unixlabstatus/"
 
+error_message = """You must specify 32-bit or 64-bit machine:
+$ cshosts.py 32
+$ cshosts.py 64"""
+
 def findbesthost(bits):
+	assert bits == 32 or bits == 64, error_message
 	list = []
 
 	class MyHTMLParser(html.parser.HTMLParser):
@@ -53,14 +58,10 @@ def findbesthost(bits):
 	return besthost+".cs.utexas.edu"
 
 if __name__ == "__main__":
-	error_message = """You must specify 32-bit or 64-bit machine:
-$ cshosts.py 32
-$ cshosts.py 64"""
 	assert len(sys.argv) == 2, error_message
 	bits = None
 	try:
 		bits = int(sys.argv[1])
 	except:
 		raise AssertionError(error_message)
-	assert bits == 32 or bits == 64, error_message
 	print(findbesthost(bits))
