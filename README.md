@@ -5,10 +5,14 @@ UT CS host selector.
 
 Selects the CS host with the lowest load and prints out its hostname.
 
+Configuration
+=============
+
+In `csconnect.sh`, replace `[AAAA]` with your UT CS username, and `[BBBB]` with your preference of 32-bit or 64-bit machines.
+
 Usage
 =====
 
-1. Configure `csconnect.sh` so that it has your UT CS username, and your preference of 32-bit or 64-bit machines.
-2. Run this command and you're done:
+After configuring, run this command:
 
-    $ csconnect.sh
+	$ csconnect.sh
