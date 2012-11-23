@@ -1,4 +1,10 @@
-# IMPORTANT
-# Replace [AAAA] with your UTCS unix host username
-# Replace [BBBB] with 32 or 64 to specify whether you would like to connect to a 32-bit or 64-bit machine
-ssh -X [AAAA]@`cshosts.py [BBBB]`
+# Change this to your UT CS username.
+username = "clay"
+
+# Change this to 32 if you would rather connect to a 32-bit machine.
+# Or set it to $1 to make the first argument the bits, e.g.:
+# 	$ csconnect.sh 32
+# 	$ csconnect.sh 64
+bits = 64
+
+ssh -X $username@`cshosts.py $bits`

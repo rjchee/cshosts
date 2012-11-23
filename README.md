@@ -7,21 +7,15 @@ Contains a script to select the CS host with the lowest load and prints out its 
 
 Usage of `cshosts.py`
 =====================
+Prints out the hostname of the (32- or 64-bit, respectively) UT CS host with the lowest load.
 
 	$ cshosts.py (32|64)
 
-Prints out the hostname of the (32- or 64-bit, respectively) UT CS host with the lowest load.
-
-Configuration of `csconnect.sh`
-===============================
-
-In `csconnect.sh`, replace `[AAAA]` with your UT CS username, and `[BBBB]` with your preference of 32-bit or 64-bit machines.
-
 Usage of `csconnect.sh`
 =======================
+Connects via SSH to the UT CS host with the lowest load.
 
-After configuring:
+1. Configure `csconnect.sh` by opening it in a text editor and adding your UT CS username.
+2. After configuring:
 
 	$ csconnect.sh
-
-Connects via SSH to the UT CS host with the lowest load.
