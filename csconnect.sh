@@ -5,6 +5,6 @@ username="clay"
 # Or set it to $1 to make the first argument the bits, e.g.:
 # 	$ csconnect.sh 32
 # 	$ csconnect.sh 64
-bits=64
+bits=$1
 
 ssh -X $username@`cshosts.py $bits`.cs.utexas.edu

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import http.client, html.parser, sys
+import http.client, html.parser, sys, random
 website = "apps.cs.utexas.edu"
 filepath = "/unixlabstatus/"
 
@@ -34,27 +34,34 @@ def findbesthost(bits):
 	parser = MyHTMLParser()
 	parser.feed(resp)
 
-	newlist = [[], []]
+	computerlist = [[], []]
 
 	i = 0
 	for item in list:
+		firstcolumn = item[0]
+		
+		# check for title row of 64-bit section:
 		if len(item) == 1:
 			if item[0] == " Public Linux Workstations - 64-bit ":
-				i = 1
+				i = 1	# switch to second subarray of computerlist (for 64-bit machines)
+		
+		# check for key row
 		else:
 			if item[0] != "Host" and item[1] != "down":
 				assert len(item) == 5
-				newlist[i].append(item)
+				computerlist[i].append(item) # append computer and associated info to correct subarray of computerlist
 
 	besthost = ""
 	bestload = float(sys.maxsize)
 
-	for item in newlist[int(sys.argv[1]) // 32 - 1]:
+	bestlist = []
+	for item in computerlist[int(sys.argv[1]) // 32 - 1]:
 		load = float(item[4])
-		if load < bestload:
+		if load <= bestload:
 			bestload = load
-			besthost = item[0]
+			bestlist.append(item[0])
 
+	besthost = random.choice(bestlist)
 	return besthost
 
 if __name__ == "__main__":
