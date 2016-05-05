@@ -7,9 +7,9 @@ Contains a script to select the CS host with the lowest load and prints out its 
 
 Usage of `cshosts.py`
 =====================
-Prints out the hostname of the (32- or 64-bit, respectively) UT CS host with the lowest load.
+Prints out the hostname of the 64-bit UT CS host with the lowest load.
 
-	$ cshosts.py (32|64)
+	$ cshosts.py
 
 Usage of `csconnect.sh`
 =======================

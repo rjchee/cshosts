@@ -1,10 +1,12 @@
 # Change this to your UT CS username.
-username="clay"
+username=""
 
-# Change this to 32 if you would rather connect to a 32-bit machine.
-# Or set it to $1 to make the first argument the bits, e.g.:
-# 	$ csconnect.sh 32
-# 	$ csconnect.sh 64
-bits=$1
+# If you have a preferred machine (so you don't have to add SSH keys or
+# whatnot), and you would like to ssh into it if its load is less than some
+# threshold (default 0.3), change the bash variables below appropriately. Note
+# you can't define threshold without a fav_host
 
-ssh -X $username@`cshosts.py $bits`.cs.utexas.edu
+fav_host="deaths-head-hawkmoth" # could be empty string if you don't have one
+threshold="" # use the default threshold, any float is valid
+
+ssh -X $username@`./cshosts.py $fav_host $threshold`.cs.utexas.edu
