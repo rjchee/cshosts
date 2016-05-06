@@ -9,9 +9,12 @@ the previous script.
 
 Usage of `cshosts.py`
 =====================
-Prints out the hostname of the 64-bit UT CS host with the lowest load.
+Prints out the hostname of the 64-bit UT CS host with the lowest load. If a
+favorite host is specified, choose that host if its load is less than the
+threshold (default 0.3). If the host is down or its load is more than the
+threshold, it chooses the host with the lowest load as it normally would.
 
-	$ cshosts.py
+	$ cshosts.py fav_host? threshold?
 
 Usage of `csconnect.sh`
 =======================
