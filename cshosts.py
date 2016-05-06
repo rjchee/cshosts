@@ -9,7 +9,7 @@ def findbesthost(fav_host=None, threshold=0.3):
         def __init__(self):
             super(MyHTMLParser, self).__init__()
             self.writeenable = False
-            self.minload = float("inf") # load is at most 1
+            self.minload = float("inf")
             self.hosts = []
             self.found_fav = False
 
