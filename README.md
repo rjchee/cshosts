@@ -3,7 +3,9 @@ cshosts
 
 UT CS host selector.
 
-Contains a script to select the CS host with the lowest load and prints out its hostname, as well as a configurable script to connect to the CS host chosen by the previous script.
+Contains a script to select the CS host with the lowest load and prints out its
+hostname, as well as a configurable script to connect to the CS host chosen by
+the previous script.
 
 Usage of `cshosts.py`
 =====================
