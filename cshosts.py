@@ -47,7 +47,7 @@ def findbesthost(fav_host=None, threshold=0.3):
                             pass
                 self.count += 1
 
-    conn = http.client.HTTPConnection(website)
+    conn = http.client.HTTPSConnection(website)
     conn.request("GET", filepath)
     resp = str(conn.getresponse().read())
 
